@@ -1,0 +1,155 @@
+<html lang="en">
+  <head>
+    <title>Dice</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="h-100 d-flex align-items-center">
+      <div class="container">
+        <div class="row w-75 m-auto h-75 position-relative">
+          <div
+            class="col-md-6 player0 player active d-flex justify-content-center pt-5 text-center rounded-start"
+          >
+            <div class="d-flex flex-column">
+              <h1 class="text-white text-opacity-75">PLAYER 1</h1>
+              <h1 class="score mt-3 my-5 fa-4x" id="score0">0</h1>
+              <div
+                class="current p-3 m-auto mt-auto p-2 rounded text-white text-opacity-75"
+              >
+                <h4 class="current0 fw-bold">CURRENT</h4>
+                <h3 class="nCurrent0 fw-bold" id="nCurrent0">0</h3>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 player1 player d-flex justify-content-center pt-5 text-center rounded-end"
+          >
+            <div class="d-flex flex-column">
+              <h1 class="text-white text-opacity-75">PLAYER 2</h1>
+              <h1 class="score mt-3 my-5 fa-4x" id="score1">0</h1>
+              <div
+                class="current p-3 m-auto mt-auto p-2 rounded text-white text-opacity-75"
+              >
+                <h4 class="current1 fw-bold">CURRENT</h4>
+                <h3 class="nCurrent1 fw-bold" id="nCurrent1">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="btns position-absolute z-3">
+            <div class="d-flex justify-content-center flex-column">
+              <button
+                class="newGame btn bg-white bg-opacity-75 align-self-center px-4 fw-bold mt-3 my-5 rounded-pill"
+                id="newGame"
+              >
+                🔄 NEW GAME
+              </button>
+              <div class="numDice align-self-center mt-3 my-5">
+                <div
+                  class="dice-1 dice d-flex hidden align-items-center justify-content-center"
+                >
+                  <span class="point"></span>
+                </div>
+                <div
+                  class="dice-2 dice d-flex hidden align-items-center justify-content-evenly"
+                >
+                  <span class="point"></span><span class="point"></span>
+                </div>
+                <div class="dice-3 dice d-flex hidden justify-content-evenly">
+                  <span class="point align-self-start"></span
+                  ><span class="point align-self-center"></span
+                  ><span class="point align-self-end"></span>
+                </div>
+                <div class="dice-4 dice hidden">
+                  <span class="point position-absolute top-0 start-0"></span
+                  ><span class="point position-absolute top-0 end-0"></span
+                  ><span class="point position-absolute bottom-0 start-0"></span
+                  ><span class="point position-absolute bottom-0 end-0"></span>
+                </div>
+                <div
+                  class="dice-5 dice d-flex hidden align-items-center justify-content-center"
+                >
+                  <span class="point position-absolute top-0 start-0"></span
+                  ><span class="point position-absolute top-0 end-0"></span
+                  ><span class="point"></span
+                  ><span class="point position-absolute bottom-0 start-0"></span
+                  ><span class="point position-absolute bottom-0 end-0"></span>
+                </div>
+                <div
+                  class="dice-6 dice d-flex hidden align-items-center justify-content-center"
+                >
+                  <span class="point position-absolute top-0 start-0"></span
+                  ><span class="point position-absolute top-0 end-0"></span
+                  ><span
+                    class="point point5 position-absolute translate-middle-x"
+                  ></span
+                  ><span
+                    class="point point6 position-absolute translate-middle-x"
+                  ></span
+                  ><span class="point position-absolute bottom-0 start-0"></span
+                  ><span class="point position-absolute bottom-0 end-0"></span>
+                </div>
+              </div>
+              <div class="align-self-center d-flex flex-column">
+                <button
+                  class="rollDice btn bg-white bg-opacity-75 mt-5 mb-3 fw-bold text-opacity-50"
+                  id="roll"
+                >
+                  🎲 ROLL DICE
+                </button>
+                <button
+                  class="hold btn bg-white bg-opacity-75 fw-bold"
+                  id="hold"
+                >
+                  📤 HOLD
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      data-bs-backdrop="static"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="col-md-12 d-flex p-5 justify-content-center winner">
+              <div class="text-center">
+                <button
+                  class="newGame btn bg-white bg-opacity-75 px-4 fw-bold mt-3 my-5 rounded-pill"
+                  id="newGame"
+                  onclick="restart()"
+                  )
+                >
+                  🔄 NEW GAME
+                </button>
+                <h1 class="fa-6x my-5 py-3 winner-player">Player ${param + 1} has won</h1>
+                <h2 class="fa-3x my-5">✨ Congratulation 🎉🎊</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
